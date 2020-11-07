@@ -1,3 +1,6 @@
 env
 
 bookmarks/bookmarks/settings.py
+
+bookmarks/cert.crt
+bookmarks/cert.key
