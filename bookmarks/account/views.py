@@ -6,6 +6,7 @@ from django.contrib import messages
 from .models import Profile
 from .forms import LoginForm, UserRegistrationForm, \
     UserEditForm, ProfileEditForm
+from django.contrib import messages
 
 
 def user_login(request):

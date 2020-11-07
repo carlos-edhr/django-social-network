@@ -25,7 +25,7 @@ SECRET_KEY = 'cxi(fg(hx%qc-@i9%ssy!&!f%l7u(ii+fl@bz4-n5=7i1)n&ol'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Enable django to serve media files uploaded by users
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1243469092690183'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'cbcac9c5099abe1d794f067720d5138c'  # Facebook App Secret
