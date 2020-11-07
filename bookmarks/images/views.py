@@ -15,7 +15,7 @@ def image_create(request):
             new_item = form.save(commit=False)
 
             # assign current user tot he item
-            new_itme.user = request.user
+            new_item.user = request.user
             new_item.save()
             messages.success(request, 'Image added successfully')
 
